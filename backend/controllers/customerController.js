@@ -1,9 +1,12 @@
-const Customer = require('../models/Customer');
+const {Customer, validateCustomer }  = require('../models/Customer');
 
 // @desc    Add a new customer
 // @route   POST /api/customers
 // @access  Private (Admin, Loan Officer)
 exports.addCustomer = async (req, res) => {
+  const { error } = validateCustomer(req.body);
+  if (error) return res.status(400).send({ error: error.details[0].message });
+  
   const { name, email, phone, address } = req.body;
 
   try {

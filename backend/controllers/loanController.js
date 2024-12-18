@@ -1,4 +1,4 @@
-const Customer = require('../models/Customer');
+const { Customer } = require('../models/Customer');
 const Loan = require('../models/Loan');
 
 exports.recordLoan = async (req, res) => {

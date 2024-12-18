@@ -6,6 +6,7 @@ const connectDB = require('./config/db.js');
 const authRoutes = require('./routes/authRoutes.js');
 const customerRoutes = require('./routes/customerRoutes.js');
 const loanRoutes = require('./routes/loanRoutes.js');
+require('./utils/sendEmail.js');
 
 const app = express();
 
